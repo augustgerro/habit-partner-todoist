@@ -1,5 +1,6 @@
 name: habit-partner
 
+
 on:
   schedule: # Trigger every day
     - cron: '30 02 * * *'

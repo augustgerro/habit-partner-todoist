@@ -35,7 +35,7 @@ class Task(object):
             habit,  # Task has to be a habit pattern
             self.item["due"].get("date")
             if self.item["due"]
-            else None,  # Task has to have due date
+            else None,                    # Task has to have due date
             not self.item["in_history"],  # Task should not be archived
         ]
         return all(conditions)
