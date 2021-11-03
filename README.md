@@ -1,5 +1,5 @@
 An elegant way to use Todoist to build new habits
-
+## Idea
 It integrates "Don't Break the Chain" method for habit building into [todoist](http://todoist.com/). Once it's setup, you can forget about it and it works seamlessly.  
 
 <!-- ![Todoist Task Screenshot](https://i.imgur.com/HbWw5tu.jpeg?style=centerme) -->
