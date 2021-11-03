@@ -7,7 +7,7 @@ from dateutil import tz
 from todoist.api import TodoistAPI
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 TODOIST_DATE_FORMAT = "%Y-%m-%d"
 
