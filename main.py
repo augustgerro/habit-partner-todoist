@@ -25,7 +25,7 @@ class Task(object):
 
     def get_habit(self):
         return re.search(r"\[day\s(\d+)\]", self.item["content"])
-
+        
     def is_habit(self):
         """
         Check if task is a habit task.
@@ -83,14 +83,15 @@ class Task(object):
         """
         self.set_streak(self.current_streak + n)
 
-    def decrease(self, today):
+    def decrease(self, n=1):
         """
         Decrease streak by 1 day.
         Doesn't go to negative.
         """
-        streak = max(0, self.current_streak - 1)
+        # self.set_streak(self.current_streak - n)  # Zero is allowed
+        streak = max(0, self.current_streak - n)    # Zero is not allowed
         self.set_streak(streak)
-        self.item.update(due={"string": "ev day starting {}".format(today)})
+        # self.item.update(due={"string": "ev day starting {}".format(today)}) # Overide due date with today
 
     def reset_to_zero(self, today):
         """
@@ -121,6 +122,8 @@ class Todoist(object):
                     task.reset_to_zero(self.today)
                 else:
                     task.increase()
+                else:
+                    task.decrease()
         self.api.commit()
 
 
