@@ -117,11 +117,11 @@ class Todoist(object):
         items = self.api.state["items"]
         for item in items:
             task = Task(item)
-            if task.is_habit():
-                if task.is_due(self.today):
-                    task.reset_to_zero(self.today)
+            if task.is_habit():                  
+                if task.is_due(self.today):         # It's triggering every day at 01:00 AM
+                    task.decrease()                 # Don't forget to complete the task until next working day
                 else:
-                    task.increase()
+                    task.increase()  
                 else:
                     task.decrease()
         self.api.commit()

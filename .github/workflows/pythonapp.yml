@@ -3,7 +3,7 @@ name: habit-partner
 
 on:
   schedule: # Trigger every day
-    - cron: '30 02 * * *'
+    - cron: '00 01 * * *'
   workflow_dispatch: # Run workflow manually
 
 jobs:
