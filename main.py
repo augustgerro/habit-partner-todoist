@@ -82,6 +82,8 @@ class Task(object):
         :param n: Number of days
         """
         self.set_streak(self.current_streak + n)
+        print("Streak increased: {}".format(
+            self.current_streak) + " " + self.item["content"])
 
     def decrease(self, n=1):
         """
@@ -91,6 +93,8 @@ class Task(object):
         # self.set_streak(self.current_streak - n)  # Zero is allowed
         streak = max(0, self.current_streak - n)    # Zero is not allowed
         self.set_streak(streak)
+        print("Streak decreased: {}".format(
+            streak) + " " + self.item["content"])
         # self.item.update(due={"string": "ev day starting {}".format(today)}) # Overide due date with today
 
     def reset_to_zero(self, today):
