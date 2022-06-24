@@ -125,9 +125,7 @@ class Todoist(object):
                 if task.is_due(self.today):         # It's triggering every day at 01:00 AM
                     task.decrease()                 # Don't forget to complete the task until next working day
                 else:
-                    task.increase()  
-                else:
-                    task.decrease()
+                    task.increase()
         self.api.commit()
 
 
